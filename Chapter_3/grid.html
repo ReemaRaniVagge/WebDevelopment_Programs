@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS grid</title>
+    <style>
+        body{
+            display: grid;
+            grid-template-columns: auto;
+            /* if we add one more "auto" in column then another column is displayed*/
+            grid-template-rows: 130px 400px 130px;
+            grid-gap: 15px;
+        }
+        header,footer,main{
+            grid: 1/ span 2;
+        }
+        body{
+            margin: 0 auto;
+            max-width: 575px;
+            padding: 15px 0;
+        }
+        header,footer,main{
+            background: purple;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        This is the Header
+    </header>
+    <main>
+        This is the Main Part of the Body
+    </main>
+    <footer>
+        This is the footers
+    </footer>
+</body>
+</html>

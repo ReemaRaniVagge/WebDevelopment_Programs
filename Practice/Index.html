@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Practise</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> 
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <!--Headings-->
+    <h1>This is Amarnath</h1>
+    <h2>This is Amarnath</h2><br>
+    <h3>This is Amarnath</h3><hr>
+    <h4>This is Amarnath</h4>
+
+    <!--Paragraph-->
+    <p><span>E</span>nterprise Applications. If you’re unsure of what an enterprise application is (and what it isn’t), this should help.<br>
+        Android Applications. Not all android applications are created with Java. In fact, as of late 2017, Kotlin overtook Java...
+        Data Analysis. There was major world news in 2017 that may have slipped by you. According to TruePublica, data is now...
+        Internet of Things (IoT). The number of devices with the ability to connect to the internet has skyrocketed since the...
+    </p>
+    <br>
+    <pre>
+        Enterprise Applications. If you’re unsure of what an enterprise application is (and what it isn’t), this should help.
+Android Applications. Not all android applications are created with Java. In fact, as of late 2017, Kotlin overtook Java...
+Data Analysis. There was major world news in 2017 that may have slipped by you. According to TruePublica, data is now...
+Internet of Things (IoT). The number of devices with the ability to connect to the internet has skyrocketed since the...
+    </pre>
+    <br>
+    <p><a href="About.html">About Us</a></p>
+
+    <!--For dividing screen--> 
+    <div class="container">
+        <div class="card card1">
+            <h2>Box 1</h2>
+        </div>
+        <div class="card card2">
+            <img src="img2.jpg">
+        </div>
+        <div class="card card3">
+            <img src="img3.jpg">
+            <p class="p1">
+                <h3>Box 3</h3>
+                This is the box img
+            </p>
+        </div>
+        <div class="card card4">
+            <h2>Box 4</h2>
+            <p class="p2">
+                This is the --Paragraph-- ......
+                <a href="#">Know More</a>
+            </p>
+        </div>
+    </div>
+
+    <!--HTML list-->
+    <div class="html_list">
+        <h2>Ordered list</h2>
+        <ol type="i">
+            <li>html</li>
+            <li>css</li>
+            <li>java</li>
+            <li><i class="fa-brands fa-php"></i>php</li>
+            <li>jquery</li>            
+        </ol>
+        <br>
+        <h2>Unordered list</h2>
+        <ul type="none" class="unlist">
+            <li><i class="fa-brands fa-html5 fa-2x fa-spin"></i>  html</li>
+            <li><i class="fa-brands fa-css3"></i>css</li>
+            <li><i class="fa-brands fa-java"></i>java</li>
+            <li><i class="fa-brands fa-php"></i>php</li>
+            <li><i class="fa-brands fa-discourse"></i>jquery</li> 
+        </ul>
+    </div>
+
+    <!--HTML Table-->
+    <div class="html_table">
+        <h2>Student Data</h2>
+        <table>
+            <tr><th>Name</th><th>Email</th><th>Branch</th><th>College</th></tr>
+            <tr><td>Abc</td><td>pqr@gmail.com</td><td>Cse</td><td>xyz</td></tr>
+            <tr><td>mno</td><td>pqr@gmail.com</td><td colspan="2">ece</td></tr>
+            <tr><td>cde</td><td rowspan="2">pqr@gmail.com</td><td>Cse</td><td>xyz</td></tr>
+            <tr><td>fgh</td><td>ece</td><td>xyz</td></tr>
+            <tr><td>Abc</td><td>pqr@gmail.com</td><td>Cse</td><td>xyz</td></tr>
+        </table>
+    </div>
+
+    <!--HTML form-->
+    <div class="html_form">
+        <form onsubmit="return validation()" name="submit-to-google-sheet" method="post">
+            <h2>Register</h2>
+            <input type="text" id="username" name="Name" placeholder="Full Name"><br>
+            <span id="errorname" style="color:red;"></span>
+            <input type="email" id="email" name="Email" placeholder="Email Id"><br>
+            <span id="erroremail" style="color:red;"></span>
+            <input type="number" id="number" name="Number" placeholder="Contact number"><br>
+            <span id="errornumber" style="color:red;"></span>
+            <select name="Branch" required>
+                <option>--Branch--</option>
+                <option>cse</option>
+                <option>it</option>
+                <option>ece</option>
+                <option>mech</option>
+            </select><br>
+            <select name="Year" required>
+                <option>--Year--</option>
+                <option>1year</option>
+                <option>2year</option>
+                <option>3year</option>
+                <option>4Year</option>
+            </select><br>
+            <input type="text" name="College Name" placeholder="College Name" required><br>
+            <button type="submit">Register</button>
+            <button type="reset">Refresh</button><br>
+        </form>
+    </div>
+
+    <script>
+        function validation(){
+            var username =document.getElementById('username').value;
+            var email= document.getElementById('email').value;
+            var number = document.getElementById('number').value;
+
+            var usercheck = /^[A-Za-z]{3,30}$/;
+            var emailcheck = /^[A-Za-z_0-9.]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,9}$/;
+            var checknumber = /^[9876][0-9]{9}$/;
+
+            if(usercheck.test(username)){
+                document.getElementById('errorname').innerHTML  = " ";
+            }
+            else{
+                document.getElementById('errorname').innerHTML  = "** Invalid Name **";
+                return false;
+            }
+            if(emailcheck.test(email)){
+                document.getElementById('erroremail').innerHTML  = " ";
+            }
+            else{
+                document.getElementById('erroremail').innerHTML  = "** Invalid Email **";
+                return false;
+            }
+            if(checknumber.test(number)){
+                document.getElementById('errornumber').innerHTML  = " ";
+            }
+            else{
+                document.getElementById('errornumber').innerHTML  = "** Invalid Email **";
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxsEw0J1thbLb7381orUyHLKHsfNzyTz9AkEBtluThsCO-8cvvS8fiMge8waj4awh2Q/exec'
+        const form = document.forms['submit-to-google-sheet']
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert('Success!, your response recorded!!!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+</body>
+</html>
+
+
+<!--
+    We can take color codes from browser
+    HTML COLOR CODES
+
+    in container if we say display grid or none
+    it will display n verticak manner
+-->
+<!--
+    https://github.com/jamiewilson/form-to-google-sheets
+-->

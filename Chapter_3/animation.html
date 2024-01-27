@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>css animations</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background: blue;
+            position: relative;
+            animation-name: starttoend;
+            animation-duration: 5s;
+            animation-delay: 3s;
+            animation-fill-mode: backwards;
+        }
+        @keyframes starttoend{
+            from {left:0px; background-color: red;}
+            to{left: 300px;}
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<!--
+    if we wont give background in div
+    the image disappears at end
+
+    position should set relative to move the image
+-->

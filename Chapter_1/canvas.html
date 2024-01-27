@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>canvas tag</title>
+</head>
+<body>
+    <canvas id="canvas">
+        canvas is not supported
+    </canvas>
+    <script>
+        var canvas=document.getElementById("canvas");
+        var ctx=canvas.getContext("2d");
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(0,0,50,50);
+    </script>
+</body>
+</html>

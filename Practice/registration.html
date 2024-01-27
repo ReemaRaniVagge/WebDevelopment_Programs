@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <style>
+        form{
+            width:50%;
+            padding: 5px;
+            margin: 25%;
+            text-align: center;
+            border: 3px solid black;
+            border-radius: 5px;
+            box-shadow: 4px 4px 8px gray;
+        }
+    </style>
+</head>
+<body>
+    <form name="submit-to-google-sheet" method="post">
+        <h2 class="heading">Registration Form</h2>
+        <div>
+            <input type="text" class="form-control" placeholder="Name" name="Name"><br>
+            <input type="email" class="form-control" placeholder="Email Id" name="Email"><br>
+            <input type="number" class="form-control" placeholder="Number" name="Number"><br>
+            <input type="text" class="form-control" placeholder="College" name="College"><br>
+            <select name="Branch">
+                <optgroup label="Branch">
+                <option>Cse</option>
+                <option>ece</option>
+                <option>it</option>
+                <option>mech</option>
+                </optgroup>
+            </select><br>
+            <select name="Year">
+                <optgroup label="Year">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                </optgroup>
+            </select><br>
+            <textarea placeholder="Address" cols="25" rows="5" name="Address"></textarea><br>
+            <button type="submit">Register</button>
+            <button type="reset">Refresh</button>
+        </div>
+    </form>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby5EBCg7Vl1z6Ts2ZLP5-pXtfdnEJwyW3OTF0zdqbKyVOOOOXcYdiTSC3GkHqfqGT_WYA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert('Success!, your response recorded!!!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+</html>

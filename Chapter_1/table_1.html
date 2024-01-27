@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>table tag</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 20px;
+        }
+        th{
+            text-align: right;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 100%;">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>1</td>
+            </tr>
+            <tr>
+                <th rowspan="2">Name</th>
+                <td>Amar</td>
+                <tr>
+                    <td>Nath</td>
+                </tr>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<!-- table,tr gives outtline of table-->

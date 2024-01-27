@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>css hyphenations</title>
+    <style>
+        div{
+            width: 60px;
+            border: 5px solid black;
+        }
+        div.a{
+            -webkit-hyphens: manual;
+            -ms-hyphens: manual;
+            hyphens: manual;
+        }
+    </style>
+</head>
+<body>
+    <div class="a">
+        This is a very &shy; nice moonlit evening
+    </div>
+</body>
+</html>
+<!--
+    manual and auto are working if width is short
+
+    we can use none too
+-->
